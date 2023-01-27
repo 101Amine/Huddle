@@ -6,6 +6,13 @@
     list-style-type: none;
   }
   
+  *, ::before, ::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+  }
+  
   /* Remove default margin */
   body,
   h1,
@@ -43,6 +50,7 @@
   select {
     font: inherit;
   }
+  
   
   /* Set core root defaults */
   html:focus-within {

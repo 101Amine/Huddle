@@ -12,13 +12,140 @@
 
 // colors 
 $violet :  hsl(257, 40%, 49%);
+$white: hsl(0, 0%, 100%);
 $magneta: hsl(300, 69%, 71%);
-
+$bg-gradient: linear-gradient( -45deg, hsl(273, 71%, 45%) 0%, hsl(271, 47%, 38%) 25%, hsl(257, 53%, 38%) 51%, hsl(300, 52%, 59%) 100% );
 $font-family-primary: 'Poppins', sans-serif;
 $font-family-secondary: 'Open Sans', sans-serif;
 
+/************************
+** Animation while dev **
+*************************/
+
+
+/************************
+* * * * Layout  * * * *
+*************************/
+
+body {
+  position: relative;
+  display: grid;
+//   place-content: center;
+  padding: 1.25rem;
+  gap: 1.25rem;
+
+    &::before {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+
+    background: $bg-gradient;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-size: 300% 300%;
+    animation: Gradient 15s ease infinite;
+    z-index: -2;
+    }
+
+    &::after {
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-image: url(../images/bg-mobile.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: top;
+    z-index: -1;
+
+    
+    @include desktop {
+        background-image: url(../images/bg-desktop.svg);
+        background-size: cover;
+        background-position: center;
+        }
+    }
+}
+
+
+/************************
+* * * main styles * * *
+*************************/
+
+main {
+    @include flex(unset, center);
+    gap: 2rem;
+    margin-top: 5rem;
+}
 
 
 
+.right__side {
+    flex:1;
+    flex-grow: 2;
+    text-align: start;
+    align-items: flex-start;
+  
+}
 
 
+h1 {
+    font-family: $font-family-primary;
+    font-size: 2.5rem;
+    color: $white;
+    line-height: 1.5;
+    max-width: 28rem;
+    margin-bottom: 1rem;
+}
+
+
+p {
+    font-family: $font-family-secondary;
+    max-width: 34rem;
+    color: $white;
+    margin-bottom: 2rem;
+    font-size: 1.2rem;
+    line-height: 1.6;
+}
+
+/************************
+* * * btn styles * * *
+*************************/
+
+
+button {
+    background-color: $white;
+    height: 3em;
+    width: 10em;
+    border: none;
+    border-radius: 5em;
+}
+
+button>span {
+
+}
+
+/************************
+* * * Footer styles * * *
+*************************/
+footer {
+    margin-left: auto;
+}
+
+.icon__container {
+    display: flex;
+    gap: 1rem;
+    margin-right:2rem;
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.bi {
+    height: 10em;
+    width: 10em;
+}
