@@ -273,6 +273,12 @@ main {
   margin-top: 5rem;
   margin-inline: 3rem;
 }
+@media (max-width: 767px) {
+  main {
+    display: flex;
+    flex-direction: column;
+  }
+}
 
 .right__side {
   flex: 1;

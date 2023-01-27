@@ -67,8 +67,11 @@ body {
         background-image: url(../images/bg-desktop.svg);
         background-size: cover;
         background-position: center;
-        }
+        
     }
+
+}
+    
 }
 
 /************************
@@ -80,6 +83,7 @@ body {
     max-width: 11.25rem;
     margin-bottom: 2.5rem;
     animation: Bounce 1s infinite alternate;
+
   }
 
 /************************
@@ -91,6 +95,11 @@ main {
     gap: 4rem;
     margin-top: 5rem;
     margin-inline:3rem;
+
+    @include mobile {
+        display: flex;
+        flex-direction: column;
+    }
 }
 
 
