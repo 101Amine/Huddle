@@ -16,19 +16,17 @@
 </head>
 <body>
 
-  <header> 
-    <a href="#">
-     <img src="./images/logo.svg" alt="logo">
-    </a>
+  <header class="slide-in-top"> 
+     <img class="header-logo" src="./images/logo.svg" alt="logo">
   </header>
   
 
   <main>
 
     
-    <img src="./images/illustration-mockups.svg" alt="illustration mockups" />
+    <img class="slide-in-left" src="./images/illustration-mockups.svg" alt="illustration mockups" />
 
-    <section class="right__side">
+    <section class="right__side slide-in-right">
       <h1>Build The Community Your Fans Will Love</h1>
       <p> Huddle re-imagines the way we build communities. You have a voice, but so does your audience. Create connections with your users as you engage in genuine discussion. </p>
 
@@ -37,26 +35,28 @@
 
   </main>
 
-  <footer>
+  <footer class="social-media-container slide-in-bottom">
     <div class="icon__container">
-      <li> 
-      <a href="#instagram">
-        <i class="bi bi-instagram"></i>
-      </a>
-      </li>
-      
-      <li> 
-        <a href="#facebook">
-          <i class="bi bi-facebook"></i>
+      <ul class="social-media-list">
+        <li class="social-media-link"> 
+        <a href="#instagram" aria-label="Follow us on Instagram">
+          <i class="icon bi bi-instagram"></i>
         </a>
-      </li>
-      
+        </li>
         
-      <li> 
-          <a href="#twitter">
-            <i class="bi bi-twitter"></i>
+        <li class="social-media-list"> 
+          <a class="social-media-link" href="#facebook" aria-label="Follow us on Facebook">
+            <i class="icon bi bi-facebook"></i>
           </a>
-      </li>
+        </li>
+        
+          
+        <li class="social-media-list"> 
+            <a class="social-media-link" href="#twitter" aria-label="Follow us on twitter">
+              <i class="icon bi bi-twitter"></i>
+            </a>
+        </li>
+    </ul>
         
     </div>
   </footer>

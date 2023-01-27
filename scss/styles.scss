@@ -17,10 +17,12 @@ $magneta: hsl(300, 69%, 71%);
 $bg-gradient: linear-gradient( -45deg, hsl(273, 71%, 45%) 0%, hsl(271, 47%, 38%) 25%, hsl(257, 53%, 38%) 51%, hsl(300, 52%, 59%) 100% );
 $font-family-primary: 'Poppins', sans-serif;
 $font-family-secondary: 'Open Sans', sans-serif;
+$box-shadow: hsla(0, 0%, 0%, 0.3);
+$hover-btn-color: hsl(300, 69%, 71%);
+$icon-color: hsl(0, 0%, 100%);
 
-/************************
-** Animation while dev **
-*************************/
+//animations 
+$transition: 0.8s all;
 
 
 /************************
@@ -69,6 +71,16 @@ body {
     }
 }
 
+/************************
+* * * header styles * * *
+*************************/
+
+
+.header-logo {
+    max-width: 11.25rem;
+    margin-bottom: 2.5rem;
+    animation: Bounce 1s infinite alternate;
+  }
 
 /************************
 * * * main styles * * *
@@ -76,8 +88,9 @@ body {
 
 main {
     @include flex(unset, center);
-    gap: 2rem;
+    gap: 4rem;
     margin-top: 5rem;
+    margin-inline:3rem;
 }
 
 
@@ -87,6 +100,7 @@ main {
     flex-grow: 2;
     text-align: start;
     align-items: flex-start;
+    margin-top: 2rem;
   
 }
 
@@ -106,8 +120,9 @@ p {
     max-width: 34rem;
     color: $white;
     margin-bottom: 2rem;
-    font-size: 1.2rem;
+    font-size: 1.110rem;
     line-height: 1.6;
+    transition: $transition;
 }
 
 /************************
@@ -117,14 +132,22 @@ p {
 
 button {
     background-color: $white;
-    height: 3em;
-    width: 10em;
+    height: 3.5em;
+    width: 11em;
     border: none;
     border-radius: 5em;
+    text-align: center;
+    box-shadow:  0.63rem 0.94rem -3px $box-shadow;
+    &:hover {
+        background-color: $hover-btn-color;
+        transition: $transition;
+        transform: rotateX(360deg);
+    }
 }
 
 button>span {
-
+    color: $violet;
+    font-family: $font-family-secondary;
 }
 
 /************************
@@ -140,12 +163,190 @@ footer {
     margin-right:2rem;
 }
 
-a {
-    text-decoration: none;
-    color: inherit;
-}
 
-.bi {
-    height: 10em;
-    width: 10em;
-}
+footer {
+    max-width: 80.5rem;
+  }
+  
+  .social-media-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 0.39rem;
+
+    .social-media-list {
+        display: flex;
+        align-items: center;
+        justify-content: flex-end;
+        gap: 0.88rem;
+      }
+  }
+  
+  
+
+.icon {
+    font-size: 1.25rem;
+    color: $icon-color;
+    padding: 8.08px 10px;
+    border: solid 1px $icon-color;
+    border-radius: 3.13rem;
+    transition: $transition;
+  }
+  
+
+  
+  .icon:is(:hover, :focus-visible) {
+    color: $hover-btn-color;
+    border: solid 1px $hover-btn-color;
+  }
+
+
+
+
+/************************
+* * * * Animations  * * *
+*************************/
+
+@keyframes Bounce {
+    0% {
+      transform: translateY(0);
+    }
+    100% {
+      transform: translateY(-0.63rem);
+    }
+  }
+  
+  @keyframes Gradient {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+  
+  .slide-in-top {
+    -webkit-animation: slide-in-top 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+    animation: slide-in-top 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  
+  @-webkit-keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-1000px);
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-top {
+    0% {
+      -webkit-transform: translateY(-1000px);
+      transform: translateY(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in-left {
+    -webkit-animation: slide-in-left 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-left 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  
+  @-webkit-keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-1000px);
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-left {
+    0% {
+      -webkit-transform: translateX(-1000px);
+      transform: translateX(-1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in-right {
+    -webkit-animation: slide-in-right 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-right 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  
+  @-webkit-keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(1000px);
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-right {
+    0% {
+      -webkit-transform: translateX(1000px);
+      transform: translateX(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateX(0);
+      transform: translateX(0);
+      opacity: 1;
+    }
+  }
+  
+  .slide-in-bottom {
+    -webkit-animation: slide-in-bottom 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94)
+      both;
+    animation: slide-in-bottom 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  }
+  
+  @-webkit-keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(1000px);
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  @keyframes slide-in-bottom {
+    0% {
+      -webkit-transform: translateY(1000px);
+      transform: translateY(1000px);
+      opacity: 0;
+    }
+    100% {
+      -webkit-transform: translateY(0);
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }

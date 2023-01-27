@@ -36,6 +36,11 @@ a:not([class]) {
           text-decoration-skip-ink: auto;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 /* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
 ul[role=list],
 ol[role=list] {
@@ -206,9 +211,6 @@ body {
   }
 }
 /************************
-** Animation while dev **
-*************************/
-/************************
 * * * * Layout  * * * *
 *************************/
 body {
@@ -251,14 +253,25 @@ body::after {
 }
 
 /************************
+* * * header styles * * *
+*************************/
+.header-logo {
+  max-width: 11.25rem;
+  margin-bottom: 2.5rem;
+  -webkit-animation: Bounce 1s infinite alternate;
+          animation: Bounce 1s infinite alternate;
+}
+
+/************************
 * * * main styles * * *
 *************************/
 main {
   display: flex;
   align-items: unset;
   justify-content: center;
-  gap: 2rem;
+  gap: 4rem;
   margin-top: 5rem;
+  margin-inline: 3rem;
 }
 
 .right__side {
@@ -266,6 +279,7 @@ main {
   flex-grow: 2;
   text-align: start;
   align-items: flex-start;
+  margin-top: 2rem;
 }
 
 h1 {
@@ -282,8 +296,9 @@ p {
   max-width: 34rem;
   color: hsl(0deg, 0%, 100%);
   margin-bottom: 2rem;
-  font-size: 1.2rem;
+  font-size: 1.11rem;
   line-height: 1.6;
+  transition: 0.8s all;
 }
 
 /************************
@@ -291,10 +306,22 @@ p {
 *************************/
 button {
   background-color: hsl(0deg, 0%, 100%);
-  height: 3em;
-  width: 10em;
+  height: 3.5em;
+  width: 11em;
   border: none;
   border-radius: 5em;
+  text-align: center;
+  box-shadow: 0.63rem 0.94rem -3px hsla(0deg, 0%, 0%, 0.3);
+}
+button:hover {
+  background-color: hsl(300deg, 69%, 71%);
+  transition: 0.8s all;
+  transform: rotateX(360deg);
+}
+
+button > span {
+  color: hsl(257deg, 40%, 49%);
+  font-family: "Open Sans", sans-serif;
 }
 
 /************************
@@ -310,12 +337,175 @@ footer {
   margin-right: 2rem;
 }
 
-a {
-  text-decoration: none;
-  color: inherit;
+footer {
+  max-width: 80.5rem;
 }
 
-.bi {
-  height: 10em;
-  width: 10em;
+.social-media-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 0.39rem;
+}
+.social-media-container .social-media-list {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.88rem;
+}
+
+.icon {
+  font-size: 1.25rem;
+  color: hsl(0deg, 0%, 100%);
+  padding: 8.08px 10px;
+  border: solid 1px hsl(0deg, 0%, 100%);
+  border-radius: 3.13rem;
+  transition: 0.8s all;
+}
+
+.icon:is(:hover, :focus-visible) {
+  color: hsl(300deg, 69%, 71%);
+  border: solid 1px hsl(300deg, 69%, 71%);
+}
+
+/************************
+* * * * Animations  * * *
+*************************/
+@-webkit-keyframes Bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-0.63rem);
+  }
+}
+@keyframes Bounce {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-0.63rem);
+  }
+}
+@-webkit-keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+@keyframes Gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+.slide-in-top {
+  -webkit-animation: slide-in-top 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-top 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-in-top {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-top {
+  0% {
+    transform: translateY(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+.slide-in-left {
+  -webkit-animation: slide-in-left 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-left 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-right {
+  -webkit-animation: slide-in-right 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-right 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-right {
+  0% {
+    transform: translateX(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+.slide-in-bottom {
+  -webkit-animation: slide-in-bottom 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  animation: slide-in-bottom 0.9s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+
+@-webkit-keyframes slide-in-bottom {
+  0% {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-bottom {
+  0% {
+    transform: translateY(1000px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 1;
+  }
 }/*# sourceMappingURL=styles.css.map */
